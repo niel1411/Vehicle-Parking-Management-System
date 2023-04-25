@@ -60,7 +60,7 @@ return true;
 </head>
 <body>
    <?php include_once('includes/sidebar.php');?>
-    <!-- Right Panel -->
+
 
    <?php include_once('includes/header.php');?>
 
@@ -98,9 +98,9 @@ return true;
                         <div class="card">
                             
                            
-                        </div> <!-- .card -->
+                        </div> 
 
-                    </div><!--/.col-->
+                    </div>
 
               
 
@@ -147,18 +147,18 @@ return true;
             </div>
 
 
-        </div><!-- .animated -->
-    </div><!-- .content -->
+        </div>
+    </div>
 
     <div class="clearfix"></div>
 
    <?php include_once('includes/footer.php');?>
 
-</div><!-- /#right-panel -->
+</div>
 
-<!-- Right Panel -->
 
-<!-- Scripts -->
+
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>

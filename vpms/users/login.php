@@ -75,8 +75,16 @@ if(isset($_POST['login']))
                             <label class="pull-left" >
                                 <a href="signup.php">Signup(Register yourself)</a>
                             </label>
+                            </div>
+
+                            <div class="checkbox" style="padding-bottom: 25px;padding-top: 0px;">
+                            
+                            <label class="pull-right" >
+                                <a href="../users/qrcode/index.php">QR CODE GENERATOR</a>
+                            </label>
 
                         </div>
+
                         <div class="checkbox" style="padding-bottom: 20px;padding-top: 20px;">
                             
                             <label class="pull-right" >

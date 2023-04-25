@@ -86,7 +86,28 @@ CREATE TABLE `tblregusers` (
 --
 
 INSERT INTO `tblregusers` (`ID`, `FirstName`, `LastName`, `MobileNumber`, `Email`, `Password`, `RegDate`) VALUES
-(2, 'Anuj', 'Kumar', 1234567890, 'ak@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-05-10 18:05:56');
+(2, 'FirstName', 'Lastname', 1234567890, 'email@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-05-10 18:05:56');
+
+--
+-- Table structure for table `tblregqr`
+--
+
+CREATE TABLE `tblregqr` (
+  `ID` int(5) NOT NULL,
+  `FirstName` varchar(250) DEFAULT NULL,
+  `LastName` varchar(250) DEFAULT NULL,
+  `MobileNumber` bigint(10) DEFAULT NULL,
+  `PlateNumber` text(255) DEFAULT NULL,
+  `Email` varchar(250) DEFAULT NULL,
+  `RegDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblregusers`
+--
+
+INSERT INTO `tblregqr` (`ID`, `FirstName`, `LastName`, `MobileNumber`,`PlateNumber`, `Email`, `RegDate`) VALUES
+(2, 'FirstName', 'Lastname', 1234567890, 'email@gmail.com','FTE13', 'f925916e2754e5e03f75dd58a5733251', '2022-05-10 18:05:56');
 
 -- --------------------------------------------------------
 

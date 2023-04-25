@@ -115,11 +115,11 @@ while ($row=mysqli_fetch_array($ret)) {
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="password-input" class=" form-control-label">Contact Number</label></div>
-                                        <div class="col-12 col-md-9"> <input class="form-control " id="contactnumber" name="contactnumber" type="text" value="<?php  echo $row['MobileNumber'];?>" required="true"></div>
+                                        <div class="col-12 col-md-9"> <input class="form-control " id="contactnumber" name="contactnumber" type="text" value="<?php  echo $row['MobileNumber'];?>" required='true'></div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Email</label></div>
-                                        <div class="col-12 col-md-9"><input class="form-control " id="email" name="email" type="email" value="<?php  echo $row['Email'];?>" required="true" readonly='true'></div>
+                                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
+                                        <div class="col-12 col-md-9"><input class="form-control " id="email" name="email" type="email" value="<?php  echo $row['Email'];?>" readonly='true' ></div>
                                     </div>
                                   
                                     
