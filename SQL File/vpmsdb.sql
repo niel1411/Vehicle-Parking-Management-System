@@ -42,7 +42,7 @@ CREATE TABLE `tbladmin` (
 --
 
 INSERT INTO `tbladmin` (`ID`, `AdminName`, `UserName`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`) VALUES
-(1, 'Admin', 'admin', 7898799798, 'tester1@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2019-07-05 05:38:23');
+(1, 'Admin', 'admin', 09123456789, 'rtu@gmail.com', '9ac2c263aa23fbb1bc5811170c09a0e1', '2023-02-01 16:00:05');
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,7 @@ CREATE TABLE `tblregusers` (
 -- Dumping data for table `tblregusers`
 --
 
-INSERT INTO `tblregusers` (`ID`, `FirstName`, `LastName`, `MobileNumber`, `Email`, `Password`, `RegDate`) VALUES
+INSERT INTO `tblregusers`(`ID`, `FirstName`, `LastName`, `MobileNumber`, `Email`, `Password`, `RegDate`) VALUES 
 (2, 'FirstName', 'Lastname', 1234567890, 'email@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-05-10 18:05:56');
 
 --

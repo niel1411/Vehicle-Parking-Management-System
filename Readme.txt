@@ -18,8 +18,4 @@ Admin Credential
 Username: admin
 Password: Capstone1
 
-User Credential
-Username: 1234567890
-Password: Test@123
 
-or Register a new user.
