@@ -80,7 +80,7 @@ if(isset($_POST['login']))
                             <div class="checkbox" style="padding-bottom: 25px;padding-top: 0px;">
                             
                             <label class="pull-right" >
-                                <a href="../users/qrcode/index.php">QR CODE GENERATOR</a>
+                                <a href="index.php">QR CODE GENERATOR</a>
                             </label>
 
                         </div>

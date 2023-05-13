@@ -127,8 +127,8 @@ echo "<script>window.location.href ='manage-incomingvehicle.php'</script>";
                                     </div>
                                  
                                      <div class="row form-group">
-                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Registration Number</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="vehreno" name="vehreno" class="form-control" placeholder="Registration Number" required="true"></div>
+                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Plate Number</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="vehreno" name="vehreno" class="form-control" placeholder="Plate Number" required="true"></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Owner Name</label></div>

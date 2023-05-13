@@ -96,7 +96,7 @@ CREATE TABLE `tblregqr` (
   `ID` int(5) NOT NULL,
   `FirstName` varchar(250) DEFAULT NULL,
   `LastName` varchar(250) DEFAULT NULL,
-  `MobileNumber` bigint(10) DEFAULT NULL,
+  `PhoneNumber` bigint(10) DEFAULT NULL,
   `PlateNumber` text(255) DEFAULT NULL,
   `Email` varchar(250) DEFAULT NULL,
   `RegDate` timestamp NULL DEFAULT current_timestamp()
@@ -106,7 +106,7 @@ CREATE TABLE `tblregqr` (
 -- Dumping data for table `tblregusers`
 --
 
-INSERT INTO `tblregqr` (`ID`, `FirstName`, `LastName`, `MobileNumber`,`PlateNumber`, `Email`, `RegDate`) VALUES
+INSERT INTO `tblregqr` (`ID`, `FirstName`, `LastName`, `PhoneNumber`,`PlateNumber`, `Email`, `RegDate`) VALUES
 (2, 'FirstName', 'Lastname', 1234567890, 'email@gmail.com','FTE13', 'f925916e2754e5e03f75dd58a5733251', '2022-05-10 18:05:56');
 
 -- --------------------------------------------------------
@@ -205,3 +205,12 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE TABLE `tblextravehicle` (
+  `ID` int(10) NOT NULL,
+  `ParkingNumber` varchar(120) DEFAULT NULL,
+  `OwnerName` varchar(120) DEFAULT NULL,
+  `RegistrationNumber` varchar(120) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

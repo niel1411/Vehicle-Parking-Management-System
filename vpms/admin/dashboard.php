@@ -219,30 +219,7 @@ $listedcat=mysqli_num_rows($query);
                         </div>
                     </div>
 
-                    <?php
-//total Registered Qrcode
- $query=mysqli_query($con,"select ID from tblregqr");
-$listedcat=mysqli_num_rows($query);
- ?>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-1">
-                                        <i class="pe-7s-user"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count"><?php echo $listedcat;?></span></div>
-                                            <div class="stat-heading">Registered QRCode</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    
 
 
 

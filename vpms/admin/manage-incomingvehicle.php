@@ -106,10 +106,8 @@ while ($row=mysqli_fetch_array($ret)) {
               
                 <tr>
                   <td><?php echo $cnt;?></td>
-            
-                 
                   <td><?php  echo $row['ParkingNumber'];?></td>
-                  <td><?php  echo $row['OwnerName'];?></td>
+                  <td><?php  echo str_replace('_', ' ', $row['OwnerName']);?></td>
                   <td><?php  echo $row['RegistrationNumber'];?></td>
                   
                   <td><a href="view-incomingvehicle-detail.php?viewid=<?php echo $row['ID'];?>" class="btn btn-primary">View</a> 

@@ -22,13 +22,13 @@
     <!-- Left Panel -->
 
   <?php
-  include_once('/xampp/htdocs/Vehicle parking Management System in PHP/vpms/admin/includes/sidebar.php');?>
+  include_once('includes/sidebar.php');?>
 
     <!-- Left Panel -->
 
     <!-- Right Panel -->
 
-     <?php include_once('/xampp/htdocs/Vehicle parking Management System in PHP/vpms/admin/includes/header.php');?>
+     <?php include_once('includes/header.php');?>
 
         <div class="breadcrumbs">
             <div class="breadcrumbs-inner">
@@ -46,7 +46,7 @@
                                 <ol class="breadcrumb text-right">
                                     <li><a href="/xampp/htdocs/Vehicle parking Management System in PHP/vpms/admin/dashboard.php">Dashboard</a></li>
                                     <li><a href="/xampp/htdocs/Vehicle parking Management System in PHP/vpms/admin/qrcode-admin/qr.php">QrCode Generator</a></li>
-                                    <li class="active">QrCode Generator</li>
+                                    <li class="active">QrCode Scanner</li>
                                 </ol>
                             </div>
                         </div>
@@ -153,7 +153,6 @@ if ($q !="") {
      <br><input type="text" name="start" class="input" id="result3" onkeyup="showHint(this.value)" placeholder="result here" readonly="" /></form></br>
      <br><input type="text" name="start" class="input" id="result4" onkeyup="showHint(this.value)" placeholder="result here" readonly="" /></form></br>
 
-
      <p>Status: <span id="txtHint"></span></p>
   </div>
 </div>
@@ -164,8 +163,8 @@ function onScanSuccess(qrCodeMessage) {
     document.getElementById("result").value = qrCodeArray[0];
     document.getElementById("result1").value = qrCodeArray[1];
     document.getElementById("result2").value = qrCodeArray[2];
-    document.getElementById("result3").value = qrCodeArray[3];
-    document.getElementById("result4").value = qrCodeArray[4];
+    document.getElementById("result3").value = qrCodeArray[3] + " " + qrCodeArray[4];
+    document.getElementById("result4").value = qrCodeArray[5];
 
     showHint(qrCodeMessage);
     playAudio();
@@ -191,7 +190,7 @@ html5QrcodeScanner.render(onScanSuccess, onScanError);
 
 <div class="clearfix"></div>
 
-<?php include_once('/xampp/htdocs/Vehicle parking Management System in PHP/vpms/admin/includes/footer.php');?>
+<?php include_once('includes/footer.php');?>
 
 </div><!-- /#right-panel -->
 

@@ -49,9 +49,7 @@
                     <a href="../admin/qr.php"><i class="menu-icon fa fa-th"></i> QrCode Generator </a>
                     </li>
 
-                    <li>
-                        <a href="../admin/reg-qrcode.php"><i class="menu-icon ti-user"></i>Reg Qrcode </a>
-                    </li>
+                  
                 
 
 

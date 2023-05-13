@@ -5,7 +5,12 @@ include('includes/dbconnection.php');
 if (strlen($_SESSION['vpmsaid']==0)) {
   header('location:logout.php');
   } else{
-
+    if($_GET['del']){
+      $catid=$_GET['del'];
+      mysqli_query($con,"delete from tblextravehicle where ID ='$catid'");
+      echo "<script>alert('Data Deleted');</script>";
+      echo "<script>window.location.href='manage-incomingvehicle.php'</script>";
+              }
 if(isset($_POST['submit']))
   {
     
@@ -30,6 +35,9 @@ if(isset($_POST['submit']))
   
 } 
 
+        
+        
+         
 
   ?>
 <!doctype html>
@@ -129,7 +137,7 @@ while ($row=mysqli_fetch_array($ret)) {
                                    </tr>
                                    <tr>
                                     <th>Owner Name</th>
-                                      <td><?php  echo $row['OwnerName'];?></td>
+                                      <td name="owner" value="<?php  echo $row['OwnerName'];?>" ><?php  echo $row['OwnerName'];?></td>
                                   </tr>
                                       <tr>  
                                        <th>Owner Contact Number</th>
@@ -140,7 +148,7 @@ while ($row=mysqli_fetch_array($ret)) {
                                 <td><?php  echo $row['InTime'];?></td>
                             </tr>
                             <tr>
-    <th>Status</th>
+    <th>Status</th> 
     <td> <?php  
 if($row['Status']=="")
 {
@@ -153,7 +161,6 @@ if($row['Status']=="Out")
 
      ;?></td>
   </tr>
-
 </table>
 
                     </div>
@@ -167,7 +174,7 @@ if($row['Status']=="Out")
   <tr>
     <th>Remark :</th>
     <td>
-    <textarea name="remark" placeholder="" rows="12" cols="14" class="form-control" required="true"></textarea></td>
+    <textarea name="remark" placeholder="" rows="12" cols="14" class="form-control" ></textarea></td>
   </tr>
  <tr>
 <th>Parking Charge: </th>
@@ -181,13 +188,91 @@ if($row['Status']=="Out")
      <option value="Out">Outgoing Vehicle</option>
    </select></td>
   </tr>
+  <tr>
+    <th>Add Vehicle :</th>
+    <td>
+      <p>Existing Owner</p>
+   <input name="owner" class="form-control" required="true" value="<?php echo $row['OwnerName']?>" ></input>
+      <p>Plate Number</p>
+   <input name="plate" class="form-control" required="true" placeholder="Plate number" ></input>
+   
+   <input type="submit" class="btn btn-primary btn-sm" name='update'></button>
+    <?php 
+    
+    if(isset($_POST['update'])) {
+      $parkingnumber = mt_rand(100000000, 999999999);
+      $ownername = $_POST['owner'];
+      $plate = $_POST['plate']; 
+    
+    
+      $sql = "INSERT INTO tblextravehicle (ParkingNumber,OwnerName, RegistrationNumber) VALUES ('$parkingnumber','$ownername','$plate')";
+      $result = mysqli_query($con, $sql);
+    
+      if (!$result) {
+        die("Query failed: " . mysqli_error($con));
+       }
+    
+        // Exit the script to prevent any further output
+        mysqli_close($con);
+        
+     }
+    
+    ?>
+  </td>
+  </tr>
                                  
                                     
                                     
                                  <tr>  <p style="text-align: center;"><td> <button type="submit" class="btn btn-primary btn-sm" name="submit" >Update</button></p></td></tr>
                                 </form>
                             </table>
-<?php } else { ?>
+
+
+                            <table border="1" class="table table-bordered mg-b-0">
+<tr>  
+              <th>Other Vehicles</th>
+              <tr>
+                <th>Parking Number</th>
+                <th>Owner Name</th>
+                <th>Plate Number</th>
+                <th>Actions</th>
+              </tr>
+              
+            <td>
+            <?php
+            
+              $ownername = $_POST['owner'];
+                        
+              $con = mysqli_connect("localhost", "root", "", "vpmsdb");
+              if(mysqli_connect_errno()){
+                  echo "Connection Fail".mysqli_connect_error();
+              }
+              $sql = "SELECT * FROM tblextravehicle WHERE OwnerName='$ownername'";
+              $result = mysqli_query($con, $sql);
+              // Loop through the data and display it
+              while($row = mysqli_fetch_assoc($result)) {
+          ?>
+            <tr>
+            
+              <td><?php echo $row['ParkingNumber']; ?></td>
+              <td><?php echo $row['OwnerName']; ?></td>
+              <td><?php echo $row['RegistrationNumber']; ?></td>
+              <td><a href="view-incomingvehicle-detail.php?del=<?php echo $row['ID'];?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+              <!-- ...and so on for other columns -->
+           </tr>
+           
+           <?php
+              }
+              
+              // Redirect to the manage dashboard page
+              header("Location: manage-incomingvehicle.php");
+              exit; // Make sure to exit after the redirect
+          ?>
+</table>
+<?php 
+
+
+} else { ?>
     <table border="1" class="table table-bordered mg-b-0">
   <tr>
     <th>Remark</th>
@@ -201,7 +286,11 @@ if($row['Status']=="Out")
 
   
 
+  
+
 <?php } ?>
+
+
 </table>
 
 
